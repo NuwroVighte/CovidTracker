@@ -15,7 +15,7 @@ const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
 
         //console.log(dailyData);
         fetchAPI();
-    });
+    }, []); //end array makes sure useEffect only happens once, not continuously
 
     const lineChart = (
         dailyData.length //if it's 0 it's automatically false, makes sure chart doesn't load w/o any data
@@ -38,6 +38,8 @@ const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
         />) : null
     );
 
+    console.log(confirmed, recovered, deaths);
+
     const barChart = (
         confirmed
             ? (
@@ -51,7 +53,7 @@ const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
                                 'rgba(40, 185, 40, 0.5)',
                                 'rgba(255, 0, 0, 0.5)'
                             ],
-                            data: [confirmed, recovered, deaths]
+                            data: [confirmed.value, recovered.value, deaths.value]
                         }]
                     }}
                     options={{
