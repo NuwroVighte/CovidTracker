@@ -35,6 +35,7 @@ class App extends React.Component {
             <div className={styles.container}>
                 <img className={styles.image} src={covidLogo} alt="COVID-19 Tracker"/>
                 <Cards data={data} />
+                <p>*Note: the World Health Organization no longer tracks COVID-19 recovery statistics.</p>
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                 <Chart data={data} country={country}/>
             </div>

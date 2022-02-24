@@ -29,7 +29,8 @@ const Cards = ( {data: {confirmed, deaths, recovered, lastUpdate}}) => {
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
                         <Typography variant="h5">
-                            <CountUp start={0} end={recovered.value} duration={2.5} separator="," />
+                            {/* <CountUp start={0} end={recovered.value} duration={2.5} separator="," /> */}
+                            <Typography variant="h5">N/A*</Typography>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of recoveries from COVID-19.</Typography>
