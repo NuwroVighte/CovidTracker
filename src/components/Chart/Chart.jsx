@@ -21,7 +21,8 @@ const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
         dailyData.length //if it's 0 it's automatically false, makes sure chart doesn't load w/o any data
          ? (<Line 
             data={{
-                labels: dailyData.map(({ date }) => date),
+                // labels: dailyData.map(({ date }) => date),
+                labels: dailyData.reverse().map(({ date }) => new Date(date).toLocaleDateString()),
                 datasets: [{
                     data: dailyData.map(({ confirmed }) => confirmed),
                     label: 'Infected',
